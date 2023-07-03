@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import { Image } from '@chakra-ui/react'
+import { Button, Image } from '@chakra-ui/react'
 import logo from "../Images/logo.png"
+import largeLogo from "../Images/largeLogo.png"
 import "../Styles/Navbar.css"
 
 const Navbar = () => {
@@ -43,10 +44,23 @@ const Navbar = () => {
             <div className='home'>
                 <div>
                     <div className='homeLogo'>
-                        <img src={logo} alt="logo"></img>
+                        <img src={largeLogo} alt="logo"></img>
+                    </div>
+                    <div>
+                        <h3>Free Script Writing Software</h3>
+                        <p>Unleash creativity with AI Copilot - craft compelling <br></br> screenplays</p>
+                    </div>
+                    <div>
+                        <Button backgroundColor={"red.500"} padding={"35px"} color={"white"} borderRadius={"21px"}>Go To Dashboard</Button>
                     </div>
                 </div>
+            </div>
+            <div className='content'>
+                <div>
+                    <div>
 
+                    </div>
+                </div>
             </div>
         </div>
     )

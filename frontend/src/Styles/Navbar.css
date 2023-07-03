@@ -44,10 +44,35 @@
 
 }
 
-.homeLogo {
+.home {
     position: absolute;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-left: 59px;
+    margin-top: 97px;
 }
 
 .homeLogo>img {
-    width: 200%;
+    width: 45%;
+}
+
+.home h3 {
+    margin-top: 13px;
+    font-size: 45px;
+    font-weight: 600;
+    letter-spacing: -0.1px;
+}
+
+.home p {
+    font-size: 21px;
+    font-weight: 400;
+    margin-top: 13px;
+    letter-spacing: 0.9px;
+    margin-bottom: 23px;
+
+}
+
+.content {
+    background-color: #282c30;
+
 }
