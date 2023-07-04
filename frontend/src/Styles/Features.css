@@ -1,0 +1,93 @@
+.Features {
+    background-color: #23262b;
+    background-repeat: no-repeat;
+    min-height: 2051px;
+    background-position: 50%;
+    background-size: cover;
+    position: relative;
+}
+
+.Features>div {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: white;
+}
+
+.Features>div>h1 {
+    text-align: center;
+    font-size: 23px;
+    font-weight: 00;
+    letter-spacing: 0.4px;
+    padding-top: 87px;
+}
+
+.featurediv {
+    display: flex;
+    width: 83%;
+    margin: auto;
+    margin-top: 37px;
+
+}
+
+.featureImg {
+    width: 45%;
+
+}
+
+.featureImg>img {
+    width: 87%;
+}
+
+.featureTitle {
+    width: 55%;
+
+}
+
+.featureTitle>h1 {
+    font-size: 29px;
+    font-weight: 900;
+    margin-bottom: 21px;
+}
+
+.featureTitle>p {
+    color: #f5f2f0;
+    font-weight: 200;
+    letter-spacing: -0.2px;
+
+}
+
+.acent {
+    display: flex;
+    width: 83%;
+    margin: auto;
+    margin-top: 55px;
+
+
+}
+
+.acentTitle {
+    width: 54%;
+
+}
+
+.acentTitle>p {
+    padding-right: 17px;
+    color: #f5f2f0;
+    font-weight: 200;
+    letter-spacing: -0.2px;
+}
+
+.acentTitle>h1 {
+    font-size: 29px;
+    font-weight: 900;
+    margin-bottom: 21px;
+}
+
+.acentImg {
+    width: 45%;
+    display: flex;
+    justify-content: end;
+}
+
+.acentImg>img {
+    width: 87%;
+}
