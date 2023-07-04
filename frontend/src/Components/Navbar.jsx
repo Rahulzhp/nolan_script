@@ -1,18 +1,30 @@
 import React, { useEffect, useState } from 'react'
-import { Button, Image } from '@chakra-ui/react'
+import { Button, FormControl, FormLabel, Image, Input, Select, Textarea, useDisclosure } from '@chakra-ui/react'
 import logo from "../Images/logo.png"
 import largeLogo from "../Images/largeLogo.png"
 import brain from "../Images/bran.png"
 import offline from "../Images/offline.png"
 import charity from "../Images/charity.png"
 import secure from "../Images/secure.png"
-import into from "../Images/intro.png"
-import acent from "../Images/accent.png"
 import "../Styles/Navbar.css"
 import Features from './Features'
+import {
+    Modal,
+    ModalOverlay,
+    ModalContent,
+    ModalHeader,
+    ModalFooter,
+    ModalBody,
+    ModalCloseButton,
+} from '@chakra-ui/react'
+
 
 const Navbar = () => {
     const [scrolled, setScrolled] = useState(false);
+    const { isOpen, onOpen, onClose } = useDisclosure()
+
+    const initialRef = React.useRef(null)
+    const finalRef = React.useRef(null)
 
     useEffect(() => {
         const handleScroll = () => {
@@ -31,6 +43,10 @@ const Navbar = () => {
             window.removeEventListener('scroll', handleScroll);
         };
     }, []);
+
+    const handlecreate = () => {
+
+    }
     return (
         <>
             <div className='container'>
@@ -43,7 +59,7 @@ const Navbar = () => {
                             <p>Dashboard</p>
                             <p>About Us</p>
                             <p>Pricing</p>
-                            <p>Create Script</p>
+                            <p onClick={onOpen}>Create Script</p>
                             <p>Blog</p>
                             <p>Profile</p>
                         </div>
@@ -120,6 +136,44 @@ const Navbar = () => {
                         </div>
                     </div>
                 </div>
+                <>
+                    <Modal
+                        initialFocusRef={initialRef}
+                        finalFocusRef={finalRef}
+                        isOpen={isOpen}
+                        onClose={onClose}
+                    >
+                        <ModalOverlay />
+                        <ModalContent>
+                            <ModalHeader>Create Script</ModalHeader>
+                            <ModalCloseButton />
+                            <ModalBody pb={6}>
+                                < FormControl isRequired>
+                                    <FormLabel>Title</FormLabel>
+                                    <Input ref={initialRef} borderRadius={"21px"} placeholder='Untitled Screenplay' />
+                                </FormControl>
+                                <FormControl mt={5}>
+                                    <FormLabel>Plot</FormLabel>
+                                    <Textarea borderRadius={"19px"} placeholder='Sci-fi adventure across multiverse' ></Textarea>
+                                </FormControl>
+                                <FormControl isRequired mt={5}>
+                                    <FormLabel>Genre</FormLabel>
+                                    <Select placeholder='Select option'>
+                                        <option value='option1'>Action</option>
+                                        <option value='option2'>Adventure</option>
+                                        <option value='option3'>Comedy</option>
+                                    </Select>
+                                </FormControl>
+                            </ModalBody>
+                            <ModalFooter>
+                                <Button colorScheme='blue' mr={3}>
+                                    Save
+                                </Button>
+                                <Button onClick={onClose}>Cancel</Button>
+                            </ModalFooter>
+                        </ModalContent>
+                    </Modal>
+                </>
             </div>
             <Features />
         </>
