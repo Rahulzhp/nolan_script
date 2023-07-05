@@ -150,7 +150,7 @@ const Navbar = () => {
                             <ModalBody pb={6}>
                                 < FormControl isRequired>
                                     <FormLabel>Title</FormLabel>
-                                    <Input ref={initialRef} borderRadius={"21px"} placeholder='Untitled Screenplay' />
+                                    <Input ref={initialRef} borderRadius={"21px"} placeholder='Enter Title' />
                                 </FormControl>
                                 <FormControl mt={5}>
                                     <FormLabel>Plot</FormLabel>
@@ -158,7 +158,7 @@ const Navbar = () => {
                                 </FormControl>
                                 <FormControl isRequired mt={5}>
                                     <FormLabel>Genre</FormLabel>
-                                    <Select placeholder='Select option'>
+                                    <Select borderRadius={"19px"} placeholder='Select option'>
                                         <option value='option1'>Action</option>
                                         <option value='option2'>Adventure</option>
                                         <option value='option3'>Comedy</option>

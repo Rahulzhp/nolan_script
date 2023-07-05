@@ -1,0 +1,56 @@
+.container {
+    background-image: url("../Images/priceing.png");
+    background-repeat: no-repeat;
+    min-height: 481px;
+    background-position: 50%;
+    background-size: cover;
+    position: relative;
+}
+
+.navbar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 7px 20px;
+    background: 0 0;
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    color: #f5f2f0;
+}
+
+.navbar.scrolled {
+    background: linear-gradient(180deg, rgba(24, 28, 41, .8), rgba(24, 28, 41, .92) 100%, rgba(24, 28, 41, .92) 0);
+    box-shadow: 0 12px 16px rgba(37, 39, 44, .2);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+
+}
+
+.navbar>div {
+    margin-left: 2px;
+}
+
+.home {
+    position: absolute;
+    color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-left: 59px;
+    margin-top: 97px;
+}
+
+.home h3 {
+    margin-top: 13px;
+    font-size: 47px;
+    font-weight: 900;
+    letter-spacing: 0.3px;
+}
+
+
+.pricetag {
+    display: flex;
+    border: 1px solid red;
+    justify-content: center;
+    margin-left: 465px;
+}
