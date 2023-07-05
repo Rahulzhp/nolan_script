@@ -50,7 +50,148 @@
 
 .pricetag {
     display: flex;
-    border: 1px solid red;
     justify-content: center;
-    margin-left: 465px;
+    margin-left: 415px;
+    background-color: rgba(37, 39, 44);
+    margin-top: 9px;
+    border-radius: 51px;
+}
+
+.pricetag>div {
+    padding: 5px 25px 0px 48px;
+
+}
+
+.pricetag>div>p {
+
+    font-size: 17px;
+}
+
+.pricelist {
+    background-color: #2e2f31;
+    background-repeat: no-repeat;
+    min-height: 1125px;
+    background-position: 50%;
+    background-size: cover;
+    position: relative;
+}
+
+.pricememo {
+    width: 83%;
+    position: absolute;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: auto;
+    margin-top: 299px;
+    margin-left: 111px;
+    z-index: 1;
+
+}
+
+.pricememo>div {
+    width: 23.5%;
+    margin: auto;
+    height: 1157px;
+    background-color: #252525;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-radius: 21px;
+}
+
+.pricememo>div>div {
+    text-align: center;
+    margin-top: 7px;
+
+}
+
+.pricememo>div>div>h1 {
+    margin-bottom: 7px;
+    font-weight: 700;
+    font-size: 26px;
+}
+
+.pricememo>div>div>p {
+    padding: 18px 18px;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.1px;
+}
+
+.pricememo>div>div>h5 {
+    font-size: 45px;
+    font-weight: 500;
+    margin-top: -11px;
+    color: blanchedalmond;
+}
+
+.pricememo>div>div>button {
+    border-radius: 15px;
+    font-size: 14px;
+    margin-top: 11px;
+    margin-bottom: 15px;
+}
+
+.priceUn {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 11px;
+
+
+}
+
+.tickText {
+    width: 72%;
+    text-align: left;
+
+}
+
+.tickText>h6 {
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.2px;
+    padding-right: 25px;
+}
+
+.tickText>p {
+    font-size: 11px;
+    margin-top: 4px;
+    color: #e6d0b8;
+    padding-right: 25px;
+    font-weight: 400;
+}
+
+.tickText>h5 {
+    font-size: 10.5px;
+    color: #f1b300;
+    margin-top: 3px;
+    font-weight: 200;
+    letter-spacing: 0.2px;
+}
+
+.tickText>h4 {
+    color: hsla(24, 20%, 95%, .7);
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing: 0.2px;
+    padding-right: 25px;
+}
+
+.tickText>h3 {
+    font-size: 11px;
+    margin-top: 4px;
+    color: hsla(24, 20%, 95%, .7);
+    padding-right: 25px;
+    font-weight: 400;
+
+}
+
+.tick {
+    width: 20%;
+
+}
+
+.tick>img {
+    width: 45%;
+    margin-left: 25px;
 }
