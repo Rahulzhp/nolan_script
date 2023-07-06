@@ -45,6 +45,10 @@
 
 }
 
+.pages>p:hover {
+    font-size: 15px;
+}
+
 .home {
     position: absolute;
     color: white;

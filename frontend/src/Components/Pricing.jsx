@@ -2,11 +2,25 @@ import React, { useEffect, useState } from 'react'
 import logo from "../Images/logo.png"
 import { Button, FormControl, FormLabel, Image, Input, Select, Textarea, useDisclosure } from '@chakra-ui/react'
 import "../Styles/Price.css"
+import {
+    Modal,
+    ModalOverlay,
+    ModalContent,
+    ModalHeader,
+    ModalFooter,
+    ModalBody,
+    ModalCloseButton,
+} from '@chakra-ui/react'
 import tick from "../Images/tick.png"
 import cross from "../Images/cross.png"
+import { Link } from 'react-router-dom'
 
 const Pricing = () => {
     const [scrolled, setScrolled] = useState(false);
+    const { isOpen, onOpen, onClose } = useDisclosure()
+
+    const initialRef = React.useRef(null)
+    const finalRef = React.useRef(null)
 
     useEffect(() => {
         const handleScroll = () => {
@@ -31,19 +45,23 @@ const Pricing = () => {
     }
     return (
         <>
-            <div className='container'>
+            <div className='priceback'>
                 <div className={scrolled ? 'navbar scrolled' : 'navbar'}>
                     <div>
-                        <Image src={logo} alt="logo"></Image>
+                        <Link to="/"><Image src={logo} alt="logo"></Image></Link>
                     </div>
                     <div>
                         <div className='pages'>
-                            <p>Dashboard</p>
-                            <p>About Us</p>
-                            <p>Pricing</p>
-                            <p>Create Script</p>
-                            <p>Blog</p>
-                            <p>Profile</p>
+                            <Link to="/" > Dashboard</Link>
+                            {/* <p>About Us</p> */}
+                            <Link  > About Us</Link>
+                            {/* <p>Pricing</p> */}
+                            <Link to="/price" > Pricing</Link>
+                            <p onClick={onOpen}>Create Script</p>
+                            {/* <p>Blog</p> */}
+                            <Link to="/login" >Login</Link>
+                            {/* <p>Profile</p> */}
+                            <Link to="/profile" >Profile</Link>
                         </div>
                     </div>
                 </div>
@@ -188,7 +206,7 @@ const Pricing = () => {
                         </div>
                     </div>
                     {/* Basic Div start */}
-                    <div>
+                    <div id='basicprice'>
                         <div>
                             <h1>Basic</h1>
                             <hr></hr>
@@ -318,7 +336,7 @@ const Pricing = () => {
                     </div>
                     {/* Pro Div start */}
 
-                    <div>
+                    <div id='prodiv'>
                         <div>
                             <h1>Pro</h1>
                             <hr></hr>
@@ -459,6 +477,44 @@ const Pricing = () => {
 
                     </div>
                 </div>
+                <>
+                    <Modal
+                        initialFocusRef={initialRef}
+                        finalFocusRef={finalRef}
+                        isOpen={isOpen}
+                        onClose={onClose}
+                    >
+                        <ModalOverlay />
+                        <ModalContent>
+                            <ModalHeader>Create Script</ModalHeader>
+                            <ModalCloseButton />
+                            <ModalBody pb={6}>
+                                < FormControl isRequired>
+                                    <FormLabel>Title</FormLabel>
+                                    <Input ref={initialRef} borderRadius={"21px"} placeholder='Enter Title' />
+                                </FormControl>
+                                <FormControl mt={5}>
+                                    <FormLabel>Plot</FormLabel>
+                                    <Textarea borderRadius={"19px"} placeholder='Sci-fi adventure across multiverse' ></Textarea>
+                                </FormControl>
+                                <FormControl isRequired mt={5}>
+                                    <FormLabel>Genre</FormLabel>
+                                    <Select borderRadius={"19px"} placeholder='Select option'>
+                                        <option value='option1'>Action</option>
+                                        <option value='option2'>Adventure</option>
+                                        <option value='option3'>Comedy</option>
+                                    </Select>
+                                </FormControl>
+                            </ModalBody>
+                            <ModalFooter>
+                                <Button colorScheme='blue' mr={3}>
+                                    Save
+                                </Button>
+                                <Button onClick={onClose}>Cancel</Button>
+                            </ModalFooter>
+                        </ModalContent>
+                    </Modal>
+                </>
             </div>
             <div className='pricelist'>
             </div>

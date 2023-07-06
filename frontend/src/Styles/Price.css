@@ -1,4 +1,4 @@
-.container {
+.priceback {
     background-image: url("../Images/priceing.png");
     background-repeat: no-repeat;
     min-height: 481px;
@@ -83,11 +83,18 @@
     justify-content: space-evenly;
     align-items: center;
     margin: auto;
-    margin-top: 299px;
+    margin-top: 289px;
     margin-left: 111px;
     z-index: 1;
 
 }
+
+#basicprice {
+    height: 1207px;
+
+}
+
+
 
 .pricememo>div {
     width: 23.5%;

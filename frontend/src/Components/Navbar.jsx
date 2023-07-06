@@ -17,6 +17,7 @@ import {
     ModalBody,
     ModalCloseButton,
 } from '@chakra-ui/react'
+import { Link } from 'react-router-dom'
 
 
 const Navbar = () => {
@@ -44,24 +45,29 @@ const Navbar = () => {
         };
     }, []);
 
-    const handlecreate = () => {
 
-    }
     return (
         <>
             <div className='container'>
                 <div className={scrolled ? 'navbar scrolled' : 'navbar'}>
                     <div>
-                        <Image src={logo} alt="logo"></Image>
+                        <Link to="/"><Image src={logo} alt="logo"></Image></Link>
+
                     </div>
                     <div>
                         <div className='pages'>
-                            <p>Dashboard</p>
-                            <p>About Us</p>
-                            <p>Pricing</p>
-                            <p onClick={onOpen}>Create Script</p>
-                            <p>Blog</p>
-                            <p>Profile</p>
+                            {/* <p>Dashboard</p> */}
+                            <Link to="/" > Dashboard</Link>
+                            {/* <p>About Us</p> */}
+                            <Link > About Us</Link>
+                            {/* <p>Pricing</p> */}
+                            <Link to="/price" > Pricing</Link>
+                            {/* <p onClick={onOpen}>Create Script</p> */}
+                            <Link onClick={onOpen}>Create Script</Link>
+                            {/* <p>Blog</p> */}
+                            <Link to="/login" >Login</Link>
+                            {/* <p>Profile</p> */}
+                            <Link to="/profile" >Profile</Link>
                         </div>
                     </div>
                 </div>
