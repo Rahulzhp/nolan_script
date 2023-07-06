@@ -112,10 +112,15 @@
 }
 
 .pricememo>div>div>p {
-    padding: 18px 18px;
+    padding-top: 17px;
     font-size: 14px;
     font-weight: 400;
     letter-spacing: 0.1px;
+    font-display: inherit;
+    padding-left: 19px;
+    padding-right: 19px;
+    margin-bottom: 17px;
+
 }
 
 .pricememo>div>div>h5 {
