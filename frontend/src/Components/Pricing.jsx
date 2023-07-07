@@ -16,6 +16,7 @@ import cross from "../Images/cross.png"
 import { Link } from 'react-router-dom'
 
 const Pricing = () => {
+    const pro = JSON.parse(localStorage.getItem('user'));
     const [scrolled, setScrolled] = useState(false);
     const { isOpen, onOpen, onClose } = useDisclosure()
 
@@ -59,9 +60,11 @@ const Pricing = () => {
                             <Link to="/price" > Pricing</Link>
                             <p onClick={onOpen}>Create Script</p>
                             {/* <p>Blog</p> */}
-                            <Link to="/login" >Login</Link>
-                            {/* <p>Profile</p> */}
-                            <Link to="/profile" >Profile</Link>
+                            {pro ? (
+                                <Link to='/profile'>Profile</Link>
+                            ) : (
+                                <Link to='/login'>Login</Link>
+                            )}
                         </div>
                     </div>
                 </div>
@@ -72,8 +75,8 @@ const Pricing = () => {
                         </div>
                         <div className='pricetag'>
                             <div><p>Monthly</p></div>
-                            <div><p>Yearly</p></div>
-                            <div><p>Monthly</p></div>
+                            <div id="yearl"><p>Yearly</p></div>
+                            <div><p>Anually</p></div>
                         </div>
                     </div>
                 </div>

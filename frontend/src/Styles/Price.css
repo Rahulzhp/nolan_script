@@ -58,13 +58,17 @@
 }
 
 .pricetag>div {
-    padding: 5px 25px 0px 48px;
+    padding: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
 }
 
 .pricetag>div>p {
 
     font-size: 17px;
+    padding: 4px 21px 0px 21px;
 }
 
 .pricelist {
@@ -94,6 +98,18 @@
 
 }
 
+#yearl {
+    background-color: red;
+    border-radius: 41px;
+}
+
+#yearl>p {
+
+    font-weight: 600;
+    color: #d8d6d6;
+
+
+}
 
 
 .pricememo>div {

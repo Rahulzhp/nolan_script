@@ -21,6 +21,7 @@ import { Link } from 'react-router-dom'
 
 
 const Navbar = () => {
+    const pro = JSON.parse(localStorage.getItem('user'));
     const [scrolled, setScrolled] = useState(false);
     const { isOpen, onOpen, onClose } = useDisclosure()
 
@@ -65,9 +66,11 @@ const Navbar = () => {
                             {/* <p onClick={onOpen}>Create Script</p> */}
                             <Link onClick={onOpen}>Create Script</Link>
                             {/* <p>Blog</p> */}
-                            <Link to="/login" >Login</Link>
-                            {/* <p>Profile</p> */}
-                            <Link to="/profile" >Profile</Link>
+                            {pro ? (
+                                <Link to='/profile'>Profile</Link>
+                            ) : (
+                                <Link to='/login'>Login</Link>
+                            )}
                         </div>
                     </div>
                 </div>

@@ -3,7 +3,7 @@ import logo from "../Images/logo.png"
 import user from "../Images/user.png"
 import { Button, FormControl, FormLabel, Image, Input, Select, Textarea, useDisclosure } from '@chakra-ui/react'
 import "../Styles/Frofile.css"
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import {
     Modal,
     ModalOverlay,
@@ -14,11 +14,17 @@ import {
     ModalCloseButton,
 } from '@chakra-ui/react'
 const Profile = () => {
+    const navigate = useNavigate()
+    const pro = JSON.parse(localStorage.getItem('user'));
+    const name = pro.name
+    const firstLetter = name.charAt(0).toUpperCase();
     const [scrolled, setScrolled] = useState(false);
     const { isOpen, onOpen, onClose } = useDisclosure()
 
     const initialRef = React.useRef(null)
     const finalRef = React.useRef(null)
+
+
     useEffect(() => {
         const handleScroll = () => {
             const scrollPosition = window.scrollY;
@@ -36,6 +42,11 @@ const Profile = () => {
             window.removeEventListener('scroll', handleScroll);
         };
     }, []);
+
+    const logout = () => {
+        localStorage.removeItem("user");
+        navigate("/")
+    }
     return (
         <>
             <div className='profilecont'>
@@ -52,21 +63,24 @@ const Profile = () => {
                             <Link to="/price" > Pricing</Link>
                             <p onClick={onOpen}>Create Script</p>
                             {/* <p>Blog</p> */}
-                            <Link to="/login" >Login</Link>
-                            {/* <p>Profile</p> */}
-                            <Link to="/profile" >Profile</Link>
+                            {pro ? (
+                                <Link to='/profile'>Profile</Link>
+                            ) : (
+                                <Link to='/login'>Login</Link>
+                            )}
                         </div>
                     </div>
                 </div>
                 <div className='profile'>
                     <div>
                         <h1>User Info</h1>
-                        <img src={user}></img>
-                        <h6>Full Name : <span>Rahul Das</span></h6>
-                        <h6>Email : <span>rahulvck95@gmail.com</span></h6>
-                        <h6>Subscription Plan : <span>Free Forever (<span id='plan'>change plan</span>)</span></h6>
+
+                        <div id="proname"><h1>{firstLetter}</h1></div>
+                        <h6>Full Name : <span>{pro.name}</span></h6>
+                        <h6>Email : <span>{pro.email}</span></h6>
+                        <h6>Subscription Plan : <span>{pro.sort} (<span id='plan'>change plan</span>)</span></h6>
                         <h6>Subscription Status : <span>Active</span></h6>
-                        <Button>Logout</Button>
+                        <Button onClick={logout}>Logout</Button>
                         <hr className='hrline'></hr>
                     </div>
                     <div>
